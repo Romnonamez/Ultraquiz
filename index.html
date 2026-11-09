@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <meta name="description" content="Pon a prueba tus conocimientos sobre ULTRAKILL.">
+  <title>ULTRAKILL // ARCHIVO DE CONOCIMIENTO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" id="home-link" aria-label="Volver al inicio">
+      <span class="brand-mark" aria-hidden="true">U</span>
+      <span>ULTRAKILL <small>ARCHIVO DE CONOCIMIENTO</small></span>
+    </a>
+    <span class="topbar-status"><i aria-hidden="true"></i> TERMINAL EN LÍNEA</span>
+  </header>
+
+  <main>
+    <section class="view active" id="home-view" aria-labelledby="home-title">
+      <div class="hero">
+        <p class="eyebrow">MÁQUINA // PROTOCOLO DE EVALUACIÓN</p>
+        <h1 id="home-title">¿CUÁNTO SABES DEL <br><span>INFIERNO</span>?</h1>
+        <p class="hero-copy">Doce quizzes. 360 preguntas. Diez aleatorias por descenso.</p>
+        <div class="hero-rule"><span>SELECCIONA UN ARCHIVO</span><span>10 PREGUNTAS ALEATORIAS</span></div>
+      </div>
+      <div class="quiz-grid" id="quiz-list" aria-live="polite">
+        <p class="loading">CARGANDO ARCHIVOS DE DATOS...</p>
+      </div>
+      <section class="ranking-panel" aria-labelledby="ranking-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">REGISTRO LOCAL</p><h2 id="ranking-title">TABLA DE SANGRE</h2></div>
+          <span class="mono-label">MEJORES PUNTUACIONES</span>
+        </div>
+        <ol class="ranking-list" id="ranking-list"></ol>
+      </section>
+      <p class="footnote">Las puntuaciones se guardan únicamente en este navegador.</p>
+    </section>
+
+    <section class="view" id="quiz-view" aria-labelledby="question-text">
+      <div class="quiz-topline">
+        <button class="text-button" id="quit-button" type="button">← MENÚ PRINCIPAL</button>
+        <span class="mono-label" id="quiz-category"></span>
+      </div>
+      <div class="quiz-heading">
+        <div><p class="eyebrow" id="question-kicker"></p><h1 id="quiz-title"></h1></div>
+        <div class="score-box"><span>PUNTUACIÓN</span><strong id="score">00</strong></div>
+      </div>
+      <div class="progress-track" role="progressbar" aria-label="Progreso del quiz" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+        <span id="progress-bar"></span>
+      </div>
+      <div class="question-panel">
+        <div class="question-meta"><span id="question-number"></span><span>ELIGE UNA RESPUESTA</span></div>
+        <h2 id="question-text" tabindex="-1"></h2>
+        <figure class="question-image" id="question-image-wrap" hidden>
+          <img id="question-image" alt="">
+          <figcaption id="question-image-caption"></figcaption>
+        </figure>
+        <div class="answer-list" id="answer-list" role="radiogroup" aria-labelledby="question-text"></div>
+        <div class="question-actions">
+          <button class="hint-button" id="hint-button" type="button">◎ REVELAR PISTA</button>
+          <p class="hint-text" id="hint-text" hidden></p>
+          <button class="primary-button" id="confirm-button" type="button" disabled>CONFIRMAR RESPUESTA <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+      </div>
+      <p class="footnote quiz-footnote">La sangre alimenta a las máquinas. La precisión te mantiene con vida.</p>
+    </section>
+
+    <section class="view" id="result-view" aria-labelledby="result-title">
+      <div class="result-panel">
+        <p class="eyebrow">EVALUACIÓN COMPLETADA // MÁQUINA V-1</p>
+        <h1 id="result-title">VEREDICTO</h1>
+        <div class="result-score"><strong id="final-score">0</strong><span>/ 10</span></div>
+        <p class="result-message" id="result-message"></p>
+        <form id="score-form" class="score-form">
+          <label for="player-name">GUARDAR EN LA TABLA DE SANGRE</label>
+          <div class="name-row">
+            <input id="player-name" name="player-name" maxlength="16" autocomplete="nickname" placeholder="Tu nombre" required>
+            <button class="primary-button" type="submit">REGISTRAR <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-note" id="form-note">Máximo 16 caracteres. El resultado se guarda en este dispositivo.</p>
+        </form>
+        <button class="text-button result-home" id="result-home-button" type="button">← VOLVER AL MENÚ</button>
+      </div>
+    </section>
+    <div class="notice" id="notice" role="alert" hidden></div>
+  </main>
+  <footer><span>ULTRAKILL QUIZ // FAN PROJECT</span><span>NO OFFICIAL AFFILIATION</span></footer>
+</body>
+</html>
